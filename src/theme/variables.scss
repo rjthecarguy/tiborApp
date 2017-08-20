@@ -86,3 +86,84 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+.bkColor {
+	background-color: navy!important;
+}
+
+.imgCenter {
+	margin:auto;
+	display: block;
+}
+
+.img70 {
+	width: 70%;
+}
+
+.leftMargin {
+	margin-left: 40px!important;
+}
+
+.floatIcon {
+	float: right;
+}
+
+.iconRightMargin {
+	margin-right: 10px;
+	width:20px;
+}
+
+#appDiv h1 {
+	text-align: center;
+	margin-bottom: 35px;
+}
+
+.titleSpace {
+	height:  15px;
+}
+
+.createButtonDiv {
+	width: 90%;
+	position: absolute;
+	bottom: 10%;
+	text-align: center;
+	display: block;
+	
+
+
+}
+
+.createButton {
+	width: 100%;
+}
+
+.pageDiv {
+	text-align: center;
+}
+
+.pageDiv button {
+	text-align: center;
+	width: 90%;
+	margin-bottom: 20px;
+}
+
+.pageDiv p {
+	text-align: center;
+	line-height: 1.8em;
+	font-size: 22px;
+}
+
+.imagePrevDiv {
+	width: 95%;
+	border: 2px solid black;
+	margin: auto auto;
+}
+
+.iconSize {
+	font-size: 26px;
+}
+
+.alertButton {
+	width: 100%;
+	background-color: red!important;
+}	
+

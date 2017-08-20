@@ -1,14 +1,17 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Tibor Protection
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding class="bkColor">
+  <img class="imgCenter" src="img/badge.png"/>
+  <div class="badgeSpace"></div>
+
+  <div class="createButtonDiv">
+  <button ion-button class="alertButton" (click)="alertEntry();">Send Alert</button>
+  <button ion-button class="createButton" (click)="openLogPage();">Open Log</button>
+  </div>
 </ion-content>

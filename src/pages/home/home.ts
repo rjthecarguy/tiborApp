@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { LogPage } from '../log/log';
+
 
 @Component({
   selector: 'page-home',
@@ -10,5 +12,13 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
+
+
+openLogPage() {
+
+  	this.navCtrl.setRoot(LogPage);
+
+  }
+
 
 }
