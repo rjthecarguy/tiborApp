@@ -15,11 +15,55 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class OnDutyPage {
 
+	// get data from page
+
 	position: any = "guard";
+	location: any ="";
+	last4: any = "";
+
+	// has page been submitted
+
+	submitted: any = false;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
+
+
+goOnDuty() {
+
+this.submitted = true;
+
+
+console.log("open");
+
+	// if guard
+
+	if(this.position=="guard")
+			{
+				if(this.last4 && this.location)
+				{
+					console.log("GOOD");
+				}
+
+			}
+
+	// if supervisor		
+
+	if(this.position=="supervisor")
+			{
+
+				console.log("super");
+
+			}
+
+
+
+
+
+}
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OnDutyPage');

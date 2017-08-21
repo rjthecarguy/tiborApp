@@ -29,10 +29,13 @@
   </ion-item>
   </ion-list>
 
-  <ion-item>
+
+<div class="errorDiv" *ngIf="submitted && !last4">Please Enter Last 4</div>
+
+  <ion-item >
   	
     <ion-label color="primary">Last 4:</ion-label>
-    <ion-textarea placeholder="Last 4" [(ngModel)]="maintNotes"></ion-textarea>
+    <ion-textarea placeholder="Last 4" [(ngModel)]="last4"></ion-textarea>
    
   </ion-item>
 
@@ -104,3 +107,7 @@
 </ion-item>
 
 </ion-content>
+<ion-footer>
+
+<button *ngIf="location" (click)="goOnDuty()" ion-button>Go On Duty as Guard</button>
+</ion-footer>
