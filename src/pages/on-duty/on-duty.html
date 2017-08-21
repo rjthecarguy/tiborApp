@@ -15,4 +15,45 @@
 
 <ion-content padding>
 
+<p>Please select from the choices below for the postion you are going on duty for.</p>
+
+
+<ion-list radio-group [(ngModel)]="position">
+  <ion-item>
+    <ion-label>Guard</ion-label>
+    <ion-radio value="guard" checked></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Supervision</ion-label>
+    <ion-radio value="supervisor"></ion-radio>
+  </ion-item>
+  </ion-list>
+
+  <ion-item>
+  	
+    <ion-label color="primary">Last 4:</ion-label>
+    <ion-textarea placeholder="Last 4" [(ngModel)]="maintNotes"></ion-textarea>
+   
+  </ion-item>
+
+  <ion-item *ngIf="position=='guard'">
+  <ion-label>Location</ion-label>
+  <ion-select [(ngModel)]="location">
+    <ion-option value="Cemex Azusa">Cemex Azusa</ion-option>
+    <ion-option value="Cemex Black Mountain">Cemex Black Mountain</ion-option>
+    <ion-option value="Cemex Escondio">Cemex Escondido</ion-option>
+    <ion-option value="Cemex Highland RM">Cemex Highland RM</ion-option>
+    <ion-option value="Cemex Lemon Cove">Cemex Lemon Cove</ion-option>
+    <ion-option value="Cemex Lytle Creek ">Cemex Lytle Creek</ion-option>
+    <ion-option value="Cemex Marina">Cemex Marina</ion-option>
+    <ion-option value="Cemex Oceanside">Cemex Oceanside</ion-option>
+    <ion-option value="Cemex Oxnard">Cemex Oxnard</ion-option>
+    <ion-option value="Cemex Ready Mix Inglewood ">Cemex Ready Mix Inglewood</ion-option>
+    <ion-option value="Cemex Ready Mix Compton">Cemex Ready Mix Compton</ion-option>
+    <ion-option value="Cemex Ready Mix Irvive">Cemex Ready Mix Irvive</ion-option>
+    <ion-option value="Cemex Ready Mix Orange">Cemex Ready Mix Orange</ion-option>
+    <ion-option value="Cemex Ready Mix San Juan ">Cemex Ready Mix San Juan</ion-option>
+  </ion-select>
+</ion-item>
+
 </ion-content>
