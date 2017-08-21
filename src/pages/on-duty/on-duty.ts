@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ReportProvider } from '../../providers/report/report';
 /**
  * Generated class for the OnDutyPage page.
  *
@@ -26,7 +26,7 @@ export class OnDutyPage {
 	submitted: any = false;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public report:ReportProvider) {
   }
 
 
@@ -36,7 +36,7 @@ goOnDuty() {
 this.submitted = true;
 
 
-console.log("open");
+
 
 	// if guard
 
@@ -44,7 +44,12 @@ console.log("open");
 			{
 				if(this.last4 && this.location)
 				{
-					console.log("GOOD");
+
+					let last4 = this.last4;
+					let location = this.location;
+
+					this.report.openGuardLog(last4,location);
+
 				}
 
 			}
