@@ -14,5 +14,20 @@
 
 
 <ion-content padding>
+<div id="reportText">
+<pre>{{reportText}}</pre>
+</div>
+
+<div id="personPicDiv"><img [src]="picImage" *ngIf="picImage" /></div>
+
+<button id="onDutyButton" ion-button (click)="onDuty();">On Duty</button>
+<button ion-button (click)="vehicleInspection();">Veh Inspect</button>
+<button ion-button (click)="rounds();">Rounds</button>
+<button ion-button (click)="detection();">Detection</button>
+<button ion-button (click)="leo();">LEO Action</button>
+<button ion-button (click)="maint();">Maint</button>
+<button ion-button (click)="lunch();">Lunch</button>
+<button ion-button (click)="customEntry();">Custom</button>
+<button id="offDutyButton" ion-button (click)="offDuty();">Off Duty</button>
 
 </ion-content>

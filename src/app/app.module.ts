@@ -7,13 +7,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LogPage } from '../pages/log/log';
+import { OnDutyPage } from "../pages/on-duty/on-duty";
+import { DataProvider } from '../providers/data/data';
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    LogPage
+    LogPage,
+    OnDutyPage
   ],
   imports: [
     BrowserModule,
@@ -23,12 +26,14 @@ import { LogPage } from '../pages/log/log';
   entryComponents: [
     MyApp,
     HomePage,
-    LogPage
+    LogPage,
+    OnDutyPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataProvider
   ]
 })
 export class AppModule {}

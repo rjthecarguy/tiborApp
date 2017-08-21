@@ -1,38 +1,25 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { OnDutyPage } from '../on-duty/on-duty';
 
 /**
- * Generated class for the LogPage page.
+ * Generated class for the OnDutyPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 
-
+@IonicPage()
 @Component({
-  selector: 'page-log',
-  templateUrl: 'log.html',
+  selector: 'page-on-duty',
+  templateUrl: 'on-duty.html',
 })
-export class LogPage {
+export class OnDutyPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-
-onDuty () {
-
-// push On Duty Page	
-
-this.navCtrl.push(OnDutyPage);
-	
-}
-
-
-
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LogPage');
+    console.log('ionViewDidLoad OnDutyPage');
   }
 
 }

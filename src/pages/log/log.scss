@@ -1,3 +1,39 @@
 page-log {
 
+#reportText {
+	height: 60%;
+	max-height: 60%;
+	overflow: scroll;
+	font-size: 16px;
+	font-weight: bold;;
 }
+
+
+button {width: 30%;}
+
+
+#personPicDiv img {
+	height:60px;
+}
+
+#personPicDiv {
+	margin-top: 15px;
+	margin-bottom: 10px;
+	border: 1px solid black;
+	padding-left: 5px;
+	padding-top: 5px;
+}	
+
+#offDutyButton {
+	background-color: red;
+}
+
+#onDutyButton {
+	background-color: green;
+}
+
+
+}
+
+
+
