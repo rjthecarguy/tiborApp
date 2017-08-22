@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ReportProvider } from '../../providers/report/report';
+import { PersonProvider } from '../../providers/person/person';
+
 /**
  * Generated class for the OnDutyPage page.
  *
@@ -26,7 +28,7 @@ export class OnDutyPage {
 	submitted: any = false;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public report:ReportProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public report:ReportProvider, public person:PersonProvider) {
   }
 
 
@@ -50,6 +52,10 @@ this.submitted = true;
 
 					this.report.openGuardLog(last4,location);
 
+
+
+				console.log(this.person.verify());
+
 				}
 
 			}
@@ -60,6 +66,8 @@ this.submitted = true;
 			{
 
 				console.log("super");
+
+
 
 			}
 
