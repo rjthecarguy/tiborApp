@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ReportProvider } from '../../providers/report/report';
+import { LogProvider } from '../../providers/log/log';
 
 
 
@@ -29,7 +29,7 @@ export class OnDutyPage {
 	submitted: any = false;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public report:ReportProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public log:LogProvider) {
   }
 
 
@@ -51,9 +51,9 @@ this.submitted = true;
 					let last4 = this.last4;
 					let location = this.location;
 
-					this.report.openGuardLog(last4,location);
+					this.log.openGuardLog(last4,location);
 
-
+					this.navCtrl.pop();
 
 				
 

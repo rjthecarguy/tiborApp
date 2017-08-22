@@ -10,7 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { LogPage } from '../pages/log/log';
 import { OnDutyPage } from "../pages/on-duty/on-duty";
 import { DataProvider } from '../providers/data/data';
-import { ReportProvider } from '../providers/report/report';
+import { LogProvider } from '../providers/log/log';
 
 
 
@@ -38,7 +38,7 @@ import { ReportProvider } from '../providers/report/report';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
-    ReportProvider
+    LogProvider
     
   ]
 })
