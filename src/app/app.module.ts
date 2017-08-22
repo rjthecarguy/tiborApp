@@ -11,7 +11,7 @@ import { LogPage } from '../pages/log/log';
 import { OnDutyPage } from "../pages/on-duty/on-duty";
 import { DataProvider } from '../providers/data/data';
 import { ReportProvider } from '../providers/report/report';
-import { PersonProvider } from '../providers/person/person';
+
 
 
 @NgModule({
@@ -38,8 +38,8 @@ import { PersonProvider } from '../providers/person/person';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
-    ReportProvider,
-    PersonProvider
+    ReportProvider
+    
   ]
 })
 export class AppModule {}

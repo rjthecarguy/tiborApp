@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ReportProvider } from '../../providers/report/report';
-import { PersonProvider } from '../../providers/person/person';
+
+
 
 /**
  * Generated class for the OnDutyPage page.
@@ -28,7 +29,7 @@ export class OnDutyPage {
 	submitted: any = false;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public report:ReportProvider, public person:PersonProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public report:ReportProvider) {
   }
 
 
@@ -54,7 +55,7 @@ this.submitted = true;
 
 
 
-				console.log(this.person.verify());
+				
 
 				}
 

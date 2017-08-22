@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { DataProvider} from '../data/data';
+import PouchDBFind from 'pouchdb-find';
+import PouchDB from 'pouchdb';
+PouchDB.plugin(PouchDBFind);
 
 
 
@@ -14,16 +17,32 @@ import { DataProvider} from '../data/data';
 @Injectable()
 export class PersonProvider {
 
-  constructor(public http: Http) {
+  constructor(public http: Http, public DBdata:DataProvider) {
     console.log('Hello PersonProvider Provider');
   }
 
 
-  verify() {
+  verify(last4) {
 
 
-  	return false;
+  	this.DBdata.db.createIndex({
+  		index: {fields: ['type',"last4","status"]}
+		});
 
+
+  			this.DBdata.db.find({
+  				selector: {
+    						last4: {$eq:last4},
+    						type: {$eq:"staff"} 
+   							}
+      							}).then((data) => {
+
+													return false;
+
+
+      												});
+
+  	
 
   }
 
