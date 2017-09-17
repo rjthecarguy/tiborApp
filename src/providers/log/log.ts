@@ -149,4 +149,69 @@ loadLog (logID)  {
 }
 
 
+
+getDateTime () {
+
+var todayDate = new Date().toLocaleDateString();
+var todayTime = new Date().toLocaleTimeString();
+
+
+	return todayDate + "\n" + todayTime + "\n"; 
+
+
+  }
+
+
+
+newLog () {
+
+
+        console.log("NEW LOG");
+
+         this.logData._id = new Date().toISOString();
+
+         this.logData.text = this.getDateTime();
+
+         this.logData.onDate = new Date().toLocaleDateString();
+         this.logData.onTime = new Date().toLocaleTimeString();
+         this.logData.offDate = "";
+         this.logData.offTime = "";
+         
+
+
+
+         this.logData.type = "report";
+         this.logData.status = "open";
+
+
+         this.logData.text += " - " + this.logData.name + " On Duty" + "\n\n";
+
+         
+         this.DBdata.db.put(
+
+           {_id : this.logData._id,
+             type: "report",
+             status: "open",
+             onDate: this.logData.onDate,
+             onTime: this.logData.onTime,
+             offDate: this.logData.offDate,
+             offtime: this.logData.offTime,
+             text: this.logData.text,
+             name: this.logData.name,
+             last4: this.logData.last4}
+
+           );
+
+         this.loadLog(this.logData._id);
+
+         
+         this.reportPageSubject.next(this.logData);
+          
+
+
+}
+
+
+
+
 }
