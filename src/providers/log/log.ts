@@ -5,6 +5,7 @@ import { DataProvider } from '../data/data'
 import PouchDB from 'pouchdb';
 import PouchDBFind from 'pouchdb-find';
 PouchDB.plugin(PouchDBFind);
+import { Subject } from 'rxjs/Subject';
 
 /*
   Generated class for the LogProvider provider.
@@ -14,6 +15,10 @@ PouchDB.plugin(PouchDBFind);
 */
 @Injectable()
 export class LogProvider {
+
+
+reportPageSubject : any = new Subject();
+reportOpen: any = false;
 
 
 
@@ -61,9 +66,7 @@ this.DBdata.db.find({
               else  // Staff found by last 4
                 {
 
-
-
-                  
+                
 
                     this.DBdata.db.find({    // find open report
                         selector:
@@ -104,6 +107,42 @@ this.DBdata.db.find({
 
 
       });
+
+
+
+}
+
+
+
+loadLog (logID)  {
+
+    console.log("LOAD LOG");
+    console.log(logID);
+
+      this.DBdata.db.createIndex({     // Create index to get by ID
+          index: {fields: ['_id']}
+          })
+
+
+          this.DBdata.db.find({            // Get Log by ID
+              selector: {
+                        _id: {$eq:logID} 
+                         }
+              }).then((data) => {
+
+              
+
+                   this.logData._id = logID; 
+                   this .logData.text =  data.docs[0].text; // get data to local record
+                   this.logData._rev = data.docs[0]._rev;
+                   this.logData.status = "open";
+                   this.logData.type = "report";
+
+                   this.reportPageSubject.next(this.logData);  // post subject to subscribers
+
+                   this.reportOpen = true;  
+
+              });
 
 
 

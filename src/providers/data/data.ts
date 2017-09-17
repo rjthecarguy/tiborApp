@@ -35,7 +35,11 @@ export class DataProvider {
 
         // sync with CoucDB server
  
-       this.db.sync(this.remote, options);
+       this.db.sync(this.remote, options).on('error',function (err) {
+
+         
+         
+       });
 
 
 
