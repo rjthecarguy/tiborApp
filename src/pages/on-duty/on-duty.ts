@@ -50,8 +50,9 @@ this.submitted = true;
 
 					let last4 = this.last4;
 					let location = this.location;
+					let position = this.position;
 
-					this.log.openGuardLog(last4,location);
+					this.log.openGuardLog(last4,location,position);
 
 					this.navCtrl.pop();
 

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OnDutyPage } from '../on-duty/on-duty';
+import { LogProvider } from '../../providers/log/log';
+
 
 /**
  * Generated class for the LogPage page.
@@ -16,8 +18,22 @@ import { OnDutyPage } from '../on-duty/on-duty';
 })
 export class LogPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+reportText: any;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public logProvide: LogProvider) {
+
+
+  	this.logProvide.logSubject.subscribe((logData) => {
+
+	this.reportText = logData.text;
+
+	});
+
+}
+
+
+
 
 
 onDuty () {

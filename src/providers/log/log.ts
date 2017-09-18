@@ -6,6 +6,7 @@ import PouchDB from 'pouchdb';
 import PouchDBFind from 'pouchdb-find';
 PouchDB.plugin(PouchDBFind);
 import { Subject } from 'rxjs/Subject';
+import { AlertController } from 'ionic-angular';
 
 /*
   Generated class for the LogProvider provider.
@@ -17,7 +18,7 @@ import { Subject } from 'rxjs/Subject';
 export class LogProvider {
 
 
-reportPageSubject : any = new Subject();
+logSubject : any = new Subject();
 reportOpen: any = false;
 
 
@@ -39,14 +40,14 @@ logData =      {"_id": "",
 
 
 
-  constructor(public http: Http,public DBdata:DataProvider) {
+  constructor(public http: Http,public DBdata:DataProvider,  public alertCtrl: AlertController) {
     console.log('Hello LogProvider Provider');
   }
 
 
 
   
-  openGuardLog(last4, location) : any {
+  openGuardLog(last4, location, role) : any {
 
   this.DBdata.db.createIndex({
   index: {fields: ['type',"last4","status"]}
@@ -82,14 +83,15 @@ this.DBdata.db.find({
                                         {
 
                                         	
-                                         //this.logOpenMessage();   
-                                        //this.loadLog(data.docs[0]._id); //load existing log
+                                        this.logOpenMessage();   
+                                        this.loadLog(data.docs[0]._id); //load existing log
                                         }  
                                                else {
 
                                                			this.logData.last4 = personData.docs[0].last4;      // move Staff data to local var
                   										this.logData.name = personData.docs[0].staffName;
                   										this.logData.lastLocation = location;
+                  										this.logData.role = role;
 
                   										console.log(this.logData);
 
@@ -113,6 +115,29 @@ this.DBdata.db.find({
 }
 
 
+logOpenMessage() {
+let alert = this.alertCtrl.create({
+      title: 'Log Open',
+      message: 'Your log is open.  You can to add entries to this log.  To close this log, go "Off Duty"  ',
+     
+      buttons: [
+            
+       
+        {
+          text: 'OK',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+      ]
+    });
+
+    alert.present();
+
+}
+
+
+
 
 loadLog (logID)  {
 
@@ -130,7 +155,7 @@ loadLog (logID)  {
                          }
               }).then((data) => {
 
-              
+              console.log(data);
 
                    this.logData._id = logID; 
                    this .logData.text =  data.docs[0].text; // get data to local record
@@ -138,9 +163,10 @@ loadLog (logID)  {
                    this.logData.status = "open";
                    this.logData.type = "report";
 
-                   this.reportPageSubject.next(this.logData);  // post subject to subscribers
+                   this.logSubject.next(this.logData);  // post subject to subscribers
 
                    this.reportOpen = true;  
+
 
               });
 
@@ -205,7 +231,7 @@ newLog () {
          this.loadLog(this.logData._id);
 
          
-         this.reportPageSubject.next(this.logData);
+         this.logSubject.next(this.logData);
           
 
 
