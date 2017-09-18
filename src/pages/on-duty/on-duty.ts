@@ -43,7 +43,7 @@ this.submitted = true;
 
 	// if guard
 
-	if(this.position=="guard")
+	if(this.position=="Guard")
 			{
 				if(this.last4 && this.location)
 				{
@@ -64,12 +64,18 @@ this.submitted = true;
 
 	// if supervisor		
 
-	if(this.position=="supervisor")
+	if(this.position=="Supervisor")
 			{
 
 				console.log("super");
 
+				let last4 = this.last4;
+					let location = this.location;
+					let position = this.position;
 
+					this.log.openGuardLog(last4,location,position);
+
+					this.navCtrl.pop();
 
 			}
 

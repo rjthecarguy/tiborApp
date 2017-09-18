@@ -21,11 +21,11 @@
 <ion-list radio-group [(ngModel)]="position">
   <ion-item>
     <ion-label>Guard</ion-label>
-    <ion-radio value="guard" checked></ion-radio>
+    <ion-radio value="Guard" checked></ion-radio>
   </ion-item>
   <ion-item>
     <ion-label>Supervision</ion-label>
-    <ion-radio value="supervisor"></ion-radio>
+    <ion-radio value="Supervisor"></ion-radio>
   </ion-item>
   </ion-list>
 
@@ -39,7 +39,7 @@
    
   </ion-item>
 
-  <ion-item *ngIf="position=='guard'">
+  <ion-item *ngIf="position=='Guard'">
   <ion-label>Location</ion-label>
   <ion-select [(ngModel)]="location">
     <ion-option value="Cemex Azusa">Cemex Azusa</ion-option>
@@ -109,5 +109,6 @@
 </ion-content>
 <ion-footer>
 
+<button *ngIf="position=='Supervisor'" (click)="goOnDuty()" ion-button>Go On Duty as Supervisor</button>
 <button *ngIf="location" (click)="goOnDuty()" ion-button>Go On Duty as Guard</button>
 </ion-footer>

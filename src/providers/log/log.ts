@@ -95,7 +95,7 @@ this.DBdata.db.find({
 
                   										console.log(this.logData);
 
-                  										//this.newLog();
+                  										this.newLog();
 
                                                		} 
 
@@ -210,7 +210,20 @@ newLog () {
          this.logData.status = "open";
 
 
-         this.logData.text += " - " + this.logData.name + " On Duty" + "\n\n";
+         this.logData.text += " - " + this.logData.name + " On Duty" + "\n";
+         this.logData.text += " - " + "Role: " + this.logData.role + "\n";
+
+         	if (this.logData.role == 'Guard')
+         	{
+
+         		this.logData.text += " - " + "Loc: " + this.logData.lastLocation + "\n\n";
+         	}
+         	
+         		else 
+
+         			{
+         				this.logData.text += "\n";
+         			}	
 
          
          this.DBdata.db.put(
@@ -222,6 +235,8 @@ newLog () {
              onTime: this.logData.onTime,
              offDate: this.logData.offDate,
              offtime: this.logData.offTime,
+             role: this.logData.role,
+             location: this.logData.lastLocation, 
              text: this.logData.text,
              name: this.logData.name,
              last4: this.logData.last4}
