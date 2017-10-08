@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 import { HomePage } from '../pages/home/home';
+import { VehicleInspectionPage } from '../pages/vehicle-inspection/vehicle-inspection';
 import { LogPage } from '../pages/log/log';
 import { OnDutyPage } from "../pages/on-duty/on-duty";
 import { DataProvider } from '../providers/data/data';
@@ -19,7 +20,8 @@ import { LogProvider } from '../providers/log/log';
     MyApp,
     HomePage,
     LogPage,
-    OnDutyPage
+    OnDutyPage,
+    VehicleInspectionPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { LogProvider } from '../providers/log/log';
     MyApp,
     HomePage,
     LogPage,
-    OnDutyPage
+    OnDutyPage,
+    VehicleInspectionPage
   ],
   providers: [
     StatusBar,

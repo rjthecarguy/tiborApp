@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,  AlertController } from 'ionic-angular';
 import { OnDutyPage } from '../on-duty/on-duty';
 import { LogProvider } from '../../providers/log/log';
+import { VehicleInspectionPage } from '../vehicle-inspection/vehicle-inspection';
 
 
 /**
@@ -21,7 +22,7 @@ export class LogPage {
 reportText: any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public logProvide: LogProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public logProvide: LogProvider, public alertCtrl: AlertController) {
 
 
   	this.logProvide.logSubject.subscribe((logData) => {
@@ -36,6 +37,46 @@ reportText: any;
 
 
 
+
+
+offDuty() {
+
+  let alert = this.alertCtrl.create({
+      title: 'Off Duty',
+      message: 'This will close your open log and record you as off duty.',
+      
+        buttons: [
+        {
+          text: 'Go Off Duty',
+          handler: () => {
+            
+            this.logProvide.closeReport();
+          
+          }
+        },
+        
+       
+        {
+          text: 'Cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+      ]
+    });
+
+    alert.present();
+
+
+
+}
+
+
+
+
+
+
+
 onDuty () {
 
 // push On Duty Page	
@@ -44,6 +85,20 @@ this.navCtrl.push(OnDutyPage);
 	
 }
 
+
+vehicleInspection() {
+
+if(this.logProvide.logOpen == false) 
+    {
+      this.logProvide.reportWarning();
+      return;
+    } 
+    
+
+ this.navCtrl.push(VehicleInspectionPage);
+
+
+}
 
 
 

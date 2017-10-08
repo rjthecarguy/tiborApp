@@ -19,7 +19,7 @@ export class LogProvider {
 
 
 logSubject : any = new Subject();
-reportOpen: any = false;
+logOpen: any = false;
 
 
 
@@ -115,6 +115,35 @@ this.DBdata.db.find({
 }
 
 
+
+
+reportWarning() {
+
+
+let alert = this.alertCtrl.create({
+      title: 'No Log Open',
+      message: 'Please Go On Duty',
+     
+      buttons: [
+            
+       
+        {
+          text: 'OK',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+      ]
+    });
+
+    alert.present();
+
+}
+
+
+
+
+
 logOpenMessage() {
 let alert = this.alertCtrl.create({
       title: 'Log Open',
@@ -165,7 +194,7 @@ loadLog (logID)  {
 
                    this.logSubject.next(this.logData);  // post subject to subscribers
 
-                   this.reportOpen = true;  
+                   this.logOpen = true;  
 
 
               });
@@ -252,6 +281,25 @@ newLog () {
 
 }
 
+
+
+closeReport() {
+
+console.log("Close");
+
+this.logData.status = "closed"
+
+this.logData.offDate = new Date().toLocaleDateString();
+this.logData.offTime = new Date().toLocaleTimeString();
+
+this.logData.text += this.getDateTime();
+this.logData.text += " - " + this.logData.name + " Off Duty" + "\n\n";
+
+this.DBdata.db.put(this.logData);
+
+this.logSubject.next(this.logData);
+
+} 
 
 
 
