@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LogProvider } from '../../providers/log/log';
 
 /**
  * Generated class for the VehicleInspectionPage page.
@@ -15,11 +16,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class VehicleInspectionPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+miles : any;
+fuel : any;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public logProvide: LogProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad VehicleInspectionPage');
+    console.log('ionViewDidLoad VehicleInspection');
+  }
+
+
+  postVehicleInspection() {
+
+  	this.logProvide.postDateTime();
+  	this.logProvide.postEntry(" - Vehicle Inspection\n" + " - Mileage: " + this.miles +"\n" + " - Fuel: " + this.fuel + "%" + "\n\n");
+  	this.navCtrl.pop();
+
+
   }
 
 }

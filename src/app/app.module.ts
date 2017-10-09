@@ -22,6 +22,7 @@ import { LogProvider } from '../providers/log/log';
     LogPage,
     OnDutyPage,
     VehicleInspectionPage
+  
   ],
   imports: [
     BrowserModule,
@@ -35,6 +36,7 @@ import { LogProvider } from '../providers/log/log';
     LogPage,
     OnDutyPage,
     VehicleInspectionPage
+    
   ],
   providers: [
     StatusBar,

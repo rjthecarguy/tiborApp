@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,  AlertController } from 'ionic-angular';
 import { OnDutyPage } from '../on-duty/on-duty';
-import { LogProvider } from '../../providers/log/log';
 import { VehicleInspectionPage } from '../vehicle-inspection/vehicle-inspection';
+import { LogProvider } from '../../providers/log/log';
+
 
 
 /**

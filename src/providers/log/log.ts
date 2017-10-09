@@ -168,6 +168,62 @@ let alert = this.alertCtrl.create({
 
 
 
+postEntry(entry) {
+
+console.log(this.logData);
+
+
+this.logData.text += entry;
+this.logSubject.next(this.logData);
+this.DBdata.db.put(this.logData);
+
+this.getRevision(this.logData._id);
+
+
+
+}
+
+
+
+
+
+postDateTime() {
+
+  this.logData.text += this.getDateTime();
+
+  console.log(this.logData.text);
+
+  this.logSubject.next(this.logData);
+}
+
+
+
+getRevision(logID)  {
+
+this.DBdata.db.find({            // Get Log by ID
+              selector: {
+                        _id: {$eq:logID} 
+                         }
+              }).then((data) => {
+
+              
+
+                  
+                  
+                   this.logData._rev = data.docs[0]._rev;
+                  
+                   this.logSubject.next(this.logData);  // post subject to subscribers
+
+                     
+
+              });
+
+
+}
+
+
+
+
 loadLog (logID)  {
 
     console.log("LOAD LOG");
