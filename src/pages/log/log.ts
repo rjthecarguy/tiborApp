@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,  AlertController } from 'ionic-angular';
 import { OnDutyPage } from '../on-duty/on-duty';
 import { VehicleInspectionPage } from '../vehicle-inspection/vehicle-inspection';
+import { RoundsPage } from '../rounds/rounds';
 import { LogProvider } from '../../providers/log/log';
 
 
@@ -101,6 +102,18 @@ if(this.logProvide.logOpen == false)
 
 }
 
+
+rounds() {
+
+if(this.logProvide.logOpen == false) 
+    {
+      this.logProvide.reportWarning();
+      return;
+    } 
+
+   this.navCtrl.push(RoundsPage); 
+
+}
 
 
   ionViewDidLoad() {

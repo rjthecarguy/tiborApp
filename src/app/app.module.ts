@@ -9,6 +9,7 @@ import { HttpModule } from '@angular/http';
 import { HomePage } from '../pages/home/home';
 import { VehicleInspectionPage } from '../pages/vehicle-inspection/vehicle-inspection';
 import { LogPage } from '../pages/log/log';
+import { RoundsPage } from '../pages/rounds/rounds';
 import { OnDutyPage } from "../pages/on-duty/on-duty";
 import { DataProvider } from '../providers/data/data';
 import { LogProvider } from '../providers/log/log';
@@ -21,7 +22,8 @@ import { LogProvider } from '../providers/log/log';
     HomePage,
     LogPage,
     OnDutyPage,
-    VehicleInspectionPage
+    VehicleInspectionPage,
+    RoundsPage
   
   ],
   imports: [
@@ -35,7 +37,8 @@ import { LogProvider } from '../providers/log/log';
     HomePage,
     LogPage,
     OnDutyPage,
-    VehicleInspectionPage
+    VehicleInspectionPage,
+    RoundsPage
     
   ],
   providers: [
