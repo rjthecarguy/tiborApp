@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LogProvider } from '../../providers/log/log';
 
 /**
  * Generated class for the ChangeLocationPage page.
@@ -15,9 +16,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ChangeLocationPage {
 
-	loation: any = "";
+	location: any = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public logProvide: LogProvider) {
+  }
+
+
+  changeLocation () {
+
+  	let entry = " - Location Change" + "\n" + " -  " + this.location + "\n\n";
+  	this.logProvide.postEntry(entry);
+
+  	this.navCtrl.pop();
+
+
+
   }
 
   ionViewDidLoad() {
