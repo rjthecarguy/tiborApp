@@ -36,12 +36,39 @@ reportText: any;
 }
 
 
+offDutyMessage() {
+let alert = this.alertCtrl.create({
+      title: 'Off Duty Error',
+      message: 'Your have to go "On Duty" before you can go "Off Duty"  ',
+     
+      buttons: [
+            
+       
+        {
+          text: 'OK',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+      ]
+    });
 
+    alert.present();
+
+}
 
 
 
 
 offDuty() {
+
+
+  if(this.logProvide.logData.status == "")
+  {
+    this.offDutyMessage();
+    return;
+  }
+  
 
   let alert = this.alertCtrl.create({
       title: 'Off Duty',

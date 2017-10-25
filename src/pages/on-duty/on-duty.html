@@ -39,6 +39,19 @@
    
   </ion-item>
 
+   <ion-item *ngIf="position=='Supervisor'">
+  <ion-label>Supervision Role</ion-label>
+  <ion-select [(ngModel)]="role">
+    <ion-option value="Watch Commander">Watch Commander</ion-option>
+    <ion-option value="Supervisor">Supervisor</ion-option>
+    <ion-option value="Dispatcher">Dispatcher</ion-option>
+    <ion-option value="Site Support">Site Support</ion-option>
+    <ion-option value="Inspector">Inspector</ion-option>
+  </ion-select>
+  </ion-item>  
+
+
+
   <ion-item *ngIf="position=='Guard'">
   <ion-label>Location</ion-label>
   <ion-select [(ngModel)]="location">
@@ -110,5 +123,5 @@
 <ion-footer>
 
 <button *ngIf="position=='Supervisor'" (click)="goOnDuty()" ion-button>Go On Duty as Supervisor</button>
-<button *ngIf="location" (click)="goOnDuty()" ion-button>Go On Duty as Guard</button>
+<button *ngIf="position=='Guard'" (click)="goOnDuty()" ion-button>Go On Duty as Guard</button>
 </ion-footer>

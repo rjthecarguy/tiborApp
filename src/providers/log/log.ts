@@ -31,6 +31,7 @@ logData =      {"_id": "",
                 "offDate":"",
                 "last4":"",
                 "role":"",
+                "position":"",
                 "lastLocation":"",
                 "type":"",
                 "text":"",
@@ -47,7 +48,7 @@ logData =      {"_id": "",
 
 
   
-  openGuardLog(last4, location, role) : any {
+  openGuardLog(last4, location, role, position) : any {
 
   this.DBdata.db.createIndex({
   index: {fields: ['type',"last4","status"]}
@@ -92,6 +93,7 @@ this.DBdata.db.find({
                   										this.logData.name = personData.docs[0].staffName;
                   										this.logData.lastLocation = location;
                   										this.logData.role = role;
+                                      this.logData.position = position;
 
                   										console.log(this.logData);
 
@@ -307,7 +309,7 @@ newLog () {
          		else 
 
          			{
-         				this.logData.text += "\n";
+         				this.logData.text += " - " + "Pos: " + this.logData.position + "\n\n";
          			}	
 
          
@@ -342,6 +344,9 @@ newLog () {
 closeReport() {
 
 console.log("Close");
+
+
+
 
 this.logData.status = "closed"
 

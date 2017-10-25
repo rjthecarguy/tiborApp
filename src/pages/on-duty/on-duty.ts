@@ -23,6 +23,7 @@ export class OnDutyPage {
 	position: any = "guard";
 	location: any ="";
 	last4: any = "";
+	role: any ="";
 
 	// has page been submitted
 
@@ -51,8 +52,9 @@ this.submitted = true;
 					let last4 = this.last4;
 					let location = this.location;
 					let position = this.position;
+					let role ="";
 
-					this.log.openGuardLog(last4,location,position);
+					this.log.openGuardLog(last4,location,position,role);
 
 					this.navCtrl.pop();
 
@@ -72,8 +74,9 @@ this.submitted = true;
 				let last4 = this.last4;
 					let location = this.location;
 					let position = this.position;
+					let role = this.role;
 
-					this.log.openGuardLog(last4,location,position);
+					this.log.openGuardLog(last4,location,position,role);
 
 					this.navCtrl.pop();
 
