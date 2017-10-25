@@ -116,7 +116,7 @@ this.navCtrl.push(OnDutyPage);
 }
 
 
-chngeLocation() {
+changeLocation() {
 
 this.navCtrl.push(ChangeLocationPage);
 

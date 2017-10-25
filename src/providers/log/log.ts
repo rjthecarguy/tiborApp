@@ -186,6 +186,22 @@ this.getRevision(this.logData._id);
 }
 
 
+postLocationChange(newLocation) {
+
+console.log(this.logData);
+
+
+this.logData.lastLocation = newLocation;
+this.logSubject.next(this.logData);
+this.DBdata.db.put(this.logData);
+
+this.getRevision(this.logData._id);
+
+
+
+}
+
+
 
 
 
