@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,  AlertController } from 'ionic-angular';
 import { OnDutyPage } from '../on-duty/on-duty';
 import { VehicleInspectionPage } from '../vehicle-inspection/vehicle-inspection';
+import { ChangeLocationPage } from '../change-location/change-location';
 import { RoundsPage } from '../rounds/rounds';
 import { LogProvider } from '../../providers/log/log';
 
@@ -113,6 +114,14 @@ onDuty () {
 this.navCtrl.push(OnDutyPage);
 	
 }
+
+
+chngeLocation() {
+
+this.navCtrl.push(ChangeLocationPage);
+
+}
+
 
 
 vehicleInspection() {

@@ -11,6 +11,7 @@ import { VehicleInspectionPage } from '../pages/vehicle-inspection/vehicle-inspe
 import { LogPage } from '../pages/log/log';
 import { RoundsPage } from '../pages/rounds/rounds';
 import { OnDutyPage } from "../pages/on-duty/on-duty";
+import { ChangeLocationPage} from "../pages/change-location/change-location"
 import { DataProvider } from '../providers/data/data';
 import { LogProvider } from '../providers/log/log';
 
@@ -23,6 +24,7 @@ import { LogProvider } from '../providers/log/log';
     LogPage,
     OnDutyPage,
     VehicleInspectionPage,
+    ChangeLocationPage,
     RoundsPage
   
   ],
@@ -38,6 +40,7 @@ import { LogProvider } from '../providers/log/log';
     LogPage,
     OnDutyPage,
     VehicleInspectionPage,
+    ChangeLocationPage,
     RoundsPage
     
   ],
