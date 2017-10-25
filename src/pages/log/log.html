@@ -7,6 +7,9 @@
 <ion-header>
 
   <ion-navbar>
+   <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Tibor Protection Log</ion-title>
   </ion-navbar>
 
@@ -28,6 +31,7 @@
 <button ion-button (click)="maint();">Maint</button>
 <button ion-button (click)="lunch();">Lunch</button>
 <button ion-button (click)="customEntry();">Custom</button>
+ 
 <button id="offDutyButton" ion-button (click)="offDuty();">Off Duty</button>
 
 </ion-content>
