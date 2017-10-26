@@ -13,6 +13,7 @@ import { RoundsPage } from '../pages/rounds/rounds';
 import { OnDutyPage } from "../pages/on-duty/on-duty";
 import { DetectionPage } from "../pages/detection/detection";
 import { MaintPage } from "../pages/maint/maint";
+import { LunchPage } from "../pages/lunch/lunch";
 import { ChangeLocationPage} from "../pages/change-location/change-location";
 import { LeoActionPage} from "../pages/leo-action/leo-action"
 import { DataProvider } from '../providers/data/data';
@@ -30,6 +31,7 @@ import { LogProvider } from '../providers/log/log';
     ChangeLocationPage,
     LeoActionPage,
     MaintPage,
+    LunchPage,
     DetectionPage,
     RoundsPage
   
@@ -45,6 +47,7 @@ import { LogProvider } from '../providers/log/log';
     HomePage,
     LogPage,
     OnDutyPage,
+    LunchPage,
     VehicleInspectionPage,
     ChangeLocationPage,
     LeoActionPage,
