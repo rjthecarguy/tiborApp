@@ -252,14 +252,15 @@ loadSups ()  {
 
           this.DBdata.db.find({            // Get Log by ID
               selector: {
-                        role: {$eq:"Supervisor"} 
+                        role: {$eq:"Supervisor"},
+                        status: {$eq:"open"} 
                          }
               }).then((data) => {
 
               console.log(data.docs);
 
               this.supSubject.next(data.docs);
-              
+
                    
               });
 
