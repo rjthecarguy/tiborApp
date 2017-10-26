@@ -339,6 +339,7 @@ newLog () {
              offDate: this.logData.offDate,
              offtime: this.logData.offTime,
              role: this.logData.role,
+             position: this.logData.position,
              location: this.logData.lastLocation, 
              text: this.logData.text,
              name: this.logData.name,
