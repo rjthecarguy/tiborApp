@@ -4,6 +4,9 @@ import { OnDutyPage } from '../on-duty/on-duty';
 import { VehicleInspectionPage } from '../vehicle-inspection/vehicle-inspection';
 import { ChangeLocationPage } from '../change-location/change-location';
 import { RoundsPage } from '../rounds/rounds';
+import { LeoActionPage } from '../leo-action/leo-action';
+import { DetectionPage } from '../detection/detection';
+import { MaintPage } from '../maint/maint';
 import { LogProvider } from '../../providers/log/log';
 
 
@@ -59,6 +62,11 @@ let alert = this.alertCtrl.create({
 }
 
 
+maint() {
+
+  this.navCtrl.push(MaintPage);
+  
+}
 
 
 offDuty() {
@@ -149,6 +157,18 @@ if(this.logProvide.logOpen == false)
 
    this.navCtrl.push(RoundsPage); 
 
+}
+
+
+leo() {
+
+  this.navCtrl.push(LeoActionPage);
+}
+
+
+detection() {
+
+  this.navCtrl.push(DetectionPage);
 }
 
 

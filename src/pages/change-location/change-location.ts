@@ -27,6 +27,8 @@ export class ChangeLocationPage {
   	let entry = " - Location Change" + "\n" + " -  " + this.location + "\n\n";
   	this.logProvide.postEntry(entry);
 
+  	//this.logProvide.postLocationChange(this.location);
+
   	this.navCtrl.pop();
 
 

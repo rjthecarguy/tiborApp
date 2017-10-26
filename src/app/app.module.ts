@@ -11,7 +11,10 @@ import { VehicleInspectionPage } from '../pages/vehicle-inspection/vehicle-inspe
 import { LogPage } from '../pages/log/log';
 import { RoundsPage } from '../pages/rounds/rounds';
 import { OnDutyPage } from "../pages/on-duty/on-duty";
-import { ChangeLocationPage} from "../pages/change-location/change-location"
+import { DetectionPage } from "../pages/detection/detection";
+import { MaintPage } from "../pages/maint/maint";
+import { ChangeLocationPage} from "../pages/change-location/change-location";
+import { LeoActionPage} from "../pages/leo-action/leo-action"
 import { DataProvider } from '../providers/data/data';
 import { LogProvider } from '../providers/log/log';
 
@@ -25,6 +28,9 @@ import { LogProvider } from '../providers/log/log';
     OnDutyPage,
     VehicleInspectionPage,
     ChangeLocationPage,
+    LeoActionPage,
+    MaintPage,
+    DetectionPage,
     RoundsPage
   
   ],
@@ -41,6 +47,9 @@ import { LogProvider } from '../providers/log/log';
     OnDutyPage,
     VehicleInspectionPage,
     ChangeLocationPage,
+    LeoActionPage,
+    MaintPage,
+    DetectionPage,
     RoundsPage
     
   ],
