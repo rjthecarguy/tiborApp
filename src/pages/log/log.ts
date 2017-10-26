@@ -7,6 +7,7 @@ import { RoundsPage } from '../rounds/rounds';
 import { LeoActionPage } from '../leo-action/leo-action';
 import { DetectionPage } from '../detection/detection';
 import { MaintPage } from '../maint/maint';
+import { SupsPage } from '../sups/sups';
 import { TrespassPage } from '../trespass/trespass';
 import { LunchPage } from '../lunch/lunch';
 import { LogProvider } from '../../providers/log/log';
@@ -63,6 +64,11 @@ let alert = this.alertCtrl.create({
 
 }
 
+
+sups() {
+
+  this.navCtrl.push(SupsPage);
+}
 
 trespass() {
 

@@ -19,6 +19,8 @@ export class LogProvider {
 
 
 logSubject : any = new Subject();
+supSubject : any = new Subject();
+
 logOpen: any = false;
 
 
@@ -239,7 +241,31 @@ this.DBdata.db.find({            // Get Log by ID
 
 }
 
+loadSups ()  {
 
+    
+
+      this.DBdata.db.createIndex({     // Create index to get by ID
+          index: {fields: ['role']}
+          })
+
+
+          this.DBdata.db.find({            // Get Log by ID
+              selector: {
+                        role: {$eq:"Supervisor"} 
+                         }
+              }).then((data) => {
+
+              console.log(data.docs);
+
+              this.supSubject.next(data.docs);
+              
+                   
+              });
+
+
+
+}
 
 
 loadLog (logID)  {
