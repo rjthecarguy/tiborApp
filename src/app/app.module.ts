@@ -16,6 +16,7 @@ import { MaintPage } from "../pages/maint/maint";
 import { TrespassPage } from "../pages/trespass/trespass";
 import { LunchPage } from "../pages/lunch/lunch";
 import { SupsPage } from "../pages/sups/sups";
+import { CustomPage } from "../pages/custom/custom";
 import { ChangeLocationPage} from "../pages/change-location/change-location";
 import { LeoActionPage} from "../pages/leo-action/leo-action"
 import { DataProvider } from '../providers/data/data';
@@ -36,6 +37,7 @@ import { LogProvider } from '../providers/log/log';
     SupsPage,
     MaintPage,
     LunchPage,
+    CustomPage,
     DetectionPage,
     RoundsPage
   
@@ -57,6 +59,7 @@ import { LogProvider } from '../providers/log/log';
     ChangeLocationPage,
     LeoActionPage,
     MaintPage,
+    CustomPage,
     TrespassPage,
     DetectionPage,
     RoundsPage

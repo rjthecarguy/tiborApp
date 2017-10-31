@@ -7,12 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>custom</ion-title>
+    <ion-title>Custom Entry</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
+
+
 <ion-content padding>
 
+
+<p>Enter a note to the log:</p>
+
+<ion-item>
+
+
+
+  	
+    <ion-label color="primary">Custom Notes:</ion-label>
+    <ion-textarea placeholder="Notes" [(ngModel)]="customNotes"></ion-textarea>
+   
+  </ion-item>
+
 </ion-content>
+
+<ion-footer>
+<div style="text-align: center; margin-bottom: 25px;">
+<button ion-button (click)="postCustom()">Post Note</button>
+</div>
+</ion-footer>
+

@@ -88,6 +88,7 @@ this.DBdata.db.find({
                                         	
                                         this.logOpenMessage();   
                                         this.loadLog(data.docs[0]._id); //load existing log
+                                        console.log(data.docs[0]._id);
                                         }  
                                                else {
 
@@ -294,6 +295,14 @@ loadLog (logID)  {
                    this.logData._rev = data.docs[0]._rev;
                    this.logData.status = "open";
                    this.logData.type = "report";
+                   this.logData.onTime = data.docs[0].onTime;
+                   this.logData.onDate = data.docs[0].onDate;
+                   this.logData.role = data.docs[0].role;
+                   this.logData.position = data.docs[0].position;
+                   this.logData.last4 = data.docs[0].last4;
+                   this.logData.lastLocation = data.docs[0].location;
+                   this.logData.name = data.docs[0].name;
+
 
                    this.logSubject.next(this.logData);  // post subject to subscribers
 

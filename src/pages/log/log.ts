@@ -10,6 +10,7 @@ import { MaintPage } from '../maint/maint';
 import { SupsPage } from '../sups/sups';
 import { TrespassPage } from '../trespass/trespass';
 import { LunchPage } from '../lunch/lunch';
+import { CustomPage } from '../custom/custom';
 import { LogProvider } from '../../providers/log/log';
 
 
@@ -64,6 +65,11 @@ let alert = this.alertCtrl.create({
 
 }
 
+
+custom() {
+
+  this.navCtrl.push(CustomPage);
+}
 
 sups() {
 
