@@ -177,11 +177,13 @@ postEntry(entry) {
 console.log(this.logData);
 
 
-this.logData.text += entry;
-this.logSubject.next(this.logData);
-this.DBdata.db.put(this.logData);
-
 this.getRevision(this.logData._id);
+
+this.logData.text += entry;
+this.DBdata.db.put(this.logData);
+this.logSubject.next(this.logData);
+
+
 
 
 
@@ -192,12 +194,12 @@ postLocationChange(newLocation) {
 
 console.log(this.logData);
 
+this.getRevision(this.logData._id);
+
 
 this.logData.lastLocation = newLocation;
-this.logSubject.next(this.logData);
 this.DBdata.db.put(this.logData);
-
-this.getRevision(this.logData._id);
+this.logSubject.next(this.logData);
 
 
 
